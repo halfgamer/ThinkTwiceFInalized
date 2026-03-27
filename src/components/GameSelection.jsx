@@ -1,11 +1,20 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-const GameSelection = ({ scenarios, onSelect, completedScenarios = [] }) => {
+const GameSelection = ({ scenarios, onSelect, completedScenarios = [], onReset }) => {
     const { t } = useTranslation();
 
     return (
-        <div>
+        <div style={{ position: 'relative' }}>
+            {onReset && (
+                <button
+                    onClick={onReset}
+                    className="btn btn-secondary"
+                    style={{ position: 'absolute', top: 0, right: 0, padding: '8px 16px', fontSize: '1rem' }}
+                >
+                    {t('layout.reset')}
+                </button>
+            )}
             <div style={{ textAlign: 'center', marginBottom: '40px' }}>
                 <h2 style={{ fontSize: '2.5rem', marginBottom: '10px' }}>{t('gameSelection.title')}</h2>
                 <p style={{ fontSize: '1.2rem' }}>

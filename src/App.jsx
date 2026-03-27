@@ -81,7 +81,7 @@ function App() {
     const resetGame = () => {
         setScore(0);
         setCompletedScenarios([]);
-        setCurrentView('resources');
+        setCurrentView('escape_room');
         setActiveScenarioId(null);
         setSimulationResult(null);
         localStorage.clear();
@@ -103,6 +103,7 @@ function App() {
                     scenarios={scenarios}
                     onSelect={startScenario}
                     completedScenarios={completedScenarios}
+                    onReset={resetGame}
                 />
             )}
             {currentView === 'simulation' && activeScenarioId && (

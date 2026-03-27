@@ -21,13 +21,10 @@ const LanguageSwitcher = () => {
         <select
             value={i18n.language}
             onChange={handleLanguageChange}
+            className="btn btn-secondary"
             style={{
-                padding: '8px 12px',
+                padding: '8px 16px',
                 fontSize: '1rem',
-                fontWeight: 'bold',
-                borderRadius: '8px',
-                border: '2px solid var(--color-black)',
-                backgroundColor: 'var(--color-white)',
                 cursor: 'pointer',
                 fontFamily: 'inherit'
             }}

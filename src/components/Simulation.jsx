@@ -275,16 +275,25 @@ const Simulation = ({ scenario, onEnd, onResetSession }) => {
         <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
                 <h2 style={{ margin: 0 }}>{scenario.title}</h2>
-                <div style={{
-                    fontSize: '1.2rem',
-                    fontWeight: 'bold',
-                    color: timeLeft < 10 ? 'red' : 'black',
-                    border: '2px solid black',
-                    padding: '5px 10px',
-                    borderRadius: '8px',
-                    backgroundColor: 'white'
-                }}>
-                    ⏱ {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}
+                <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                    <button
+                        onClick={onResetSession}
+                        className="btn btn-secondary"
+                        style={{ padding: '8px 16px', fontSize: '1rem' }}
+                    >
+                        {t('layout.reset')}
+                    </button>
+                    <div style={{
+                        fontSize: '1.2rem',
+                        fontWeight: 'bold',
+                        color: timeLeft < 10 ? 'red' : 'black',
+                        border: '2px solid black',
+                        padding: '5px 10px',
+                        borderRadius: '8px',
+                        backgroundColor: 'white'
+                    }}>
+                        ⏱ {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}
+                    </div>
                 </div>
             </div>
 

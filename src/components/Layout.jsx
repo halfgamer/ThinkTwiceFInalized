@@ -31,23 +31,6 @@ const Layout = ({ children, onHome, onGameSelection, score, totalScenarios, onRe
                     )}
                 </div>
                 <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                    <LanguageSwitcher />
-                    {onReset && (
-                        <button
-                            onClick={onReset}
-                            className="btn btn-secondary"
-                            style={{ padding: '8px 16px', fontSize: '1rem' }}
-                        >
-                            {t('layout.reset')}
-                        </button>
-                    )}
-                    <button
-                        onClick={onGameSelection}
-                        className="btn btn-secondary"
-                        style={{ padding: '8px 16px', fontSize: '1rem' }}
-                    >
-                        {t('layout.escapeRoom')}
-                    </button>
                     <button
                         onClick={onHome}
                         className="btn btn-secondary"
@@ -55,6 +38,14 @@ const Layout = ({ children, onHome, onGameSelection, score, totalScenarios, onRe
                     >
                         {t('layout.home')}
                     </button>
+                    <button
+                        onClick={onGameSelection}
+                        className="btn btn-secondary"
+                        style={{ padding: '8px 16px', fontSize: '1rem' }}
+                    >
+                        {t('layout.escapeRoom')}
+                    </button>
+                    <LanguageSwitcher />
                 </div>
             </header>
 
